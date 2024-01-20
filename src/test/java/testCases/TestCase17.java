@@ -15,7 +15,7 @@ public class TestCase17 extends BaseClass {
 		url.LaunchingURL();
 	}
 	@Test
-	public void RemoveFromCart() {
+	public void RemoveFromCart() throws InterruptedException {
 		AllProductsPage app=new AllProductsPage(driver);
 		app.AddToCart();
 		MainPage mp=new MainPage(driver);
@@ -24,5 +24,6 @@ public class TestCase17 extends BaseClass {
 		cp.VerifyShoppingCart();
 		cp.DeleteProduct();
 		cp.CartisEmpty();
+		driver.quit();
 	}
 }

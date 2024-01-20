@@ -41,6 +41,10 @@ public class AllProductsPage {
 	WebElement menTshirt;
 	@FindBy (xpath="//button[@class='btn btn-default cart']")
 	WebElement AddtoCart;
+	@FindBy (xpath="(//a[@class='btn btn-default add-to-cart'][normalize-space()='Add to cart'])[4]")
+	WebElement AddtoCart1;
+	
+	
 	@FindBy (xpath="//h2[text()='Women - Dress Products']")
 	WebElement womencategoryproducts;
 	@FindBy (xpath="//h2[text()='Men - Tshirts Products']")
@@ -149,13 +153,15 @@ public class AllProductsPage {
 			System.out.println("Searched products are not visible");
 		}
 	}
-	public void AddToCart() {
+	public void AddToCart() throws InterruptedException {
 		Actions a = new Actions(driver);
 		a.moveToElement(bluetop).build().perform();
 		addtoCart.click();
 		Continuebtn.click();
+		Thread.sleep(2000);
 		a.moveToElement(menTshirt).build().perform();
-		addtoCart.click();
+		Thread.sleep(3000);
+		AddtoCart1.click();
 		Continuebtn.click();
 	}
 	public void WomenProducts() {

@@ -16,7 +16,7 @@ public class TestCase12 extends BaseClass {
 		url.LaunchingURL();
 	}
 	@Test
-	public void AddProductinCart() {
+	public void AddProductinCart() throws InterruptedException {
 		AllProductsPage app=new AllProductsPage(driver);
 		app.AddToCart();
 		MainPage mp=new MainPage(driver);
